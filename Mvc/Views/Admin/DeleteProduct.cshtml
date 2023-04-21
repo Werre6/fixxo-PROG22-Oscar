@@ -1,0 +1,29 @@
+﻿@inject ProductService productService
+@model DeleteProductViewModel
+
+@{
+	var products = await productService.GetAllProductsAsync();
+}
+
+<div class="container d-flex flex-wrap justify-content-center">
+	<h4 class="text-info w-100 text-center mb-3">@Model?.ConfirmationMessage</h4>
+
+	@foreach (var product in products)
+	{
+		<div class="w-25 mb-3 product-admin-view">
+			<div class="container mt-3">
+				<h4>@product.Title</h4>
+				<h5>Tag: @product.Tag</h5>
+				<h5>Category: @product.Category</h5>
+				<form method="post" asp-action="DeleteProduct">
+					<input type="hidden" value="@product.Id" asp-for="Id" />
+					<button class="btn-theme btn-delete" type="submit">DELETE</button>
+				</form>
+			</div>
+		</div>
+	}
+
+</div>
+
+
+

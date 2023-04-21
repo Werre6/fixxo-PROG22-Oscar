@@ -1,0 +1,20 @@
+﻿@model HomeViewModel
+
+<partial name="~/Views/Partials/_ShowcasePartial.cshtml" model="Model.Showcase" />
+
+@{
+	ViewData["CollectionTitle"] = "Featured Products";
+}
+<partial name="~/Views/Partials/_CollectionPartial.cshtml" model="Model.Featured" />
+
+<partial name="~/Views/Partials/_SpecialOffersPartial.cshtml" />
+
+@{
+	ViewData["CollectionTitle"] = "New Products";
+}
+<partial name="~/Views/Partials/_CollectionPartial.cshtml" model="Model.New" />
+
+@{
+	ViewData["CollectionTitle"] = "Popular Products";
+}
+<partial name="~/Views/Partials/_CollectionPartial.cshtml" model="Model.Popular" />

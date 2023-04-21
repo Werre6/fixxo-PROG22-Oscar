@@ -1,0 +1,72 @@
+﻿@model AddProductFormViewModel
+
+<div class="container mt-5">
+
+	<div class="mt-3">
+		<h3 class="text-normal text-left text-info mt-5 mb-5">@Model?.ConfirmationMessage</h3>
+	</div>
+
+	<form method="post" class="col-6" novalidate>
+		<div class="mb-3 d-flex justify-content-center">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Title" class="form-label"></label>
+			<input asp-for="Title" class="form-control" />
+			<small><span asp-validation-for="Title" class="text-danger"></span></small>
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="Description" class="form-label"></label>
+			<input asp-for="Description" class="form-control" />
+			<small><span asp-validation-for="Description" class="text-danger"></span></small>
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="Price" class="form-label"></label>
+			<input asp-for="Price" class="form-control" type="number" />
+			<small><span asp-validation-for="Price" class="text-danger"></span></small>
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="StarRating" class="form-label" ></label>
+			<input asp-for="StarRating" class="form-control" type="number" max="5" min="1"/>
+			<small><span asp-validation-for="StarRating" class="text-danger"></span></small>
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="Category" class="form-label"></label>
+			<select asp-for="Category" class="form-control">
+				<option></option>
+				<option value="Coats">Coats</option>
+				<option value="Dresses">Dresses</option>
+				<option value="Pants">Pants</option>
+				<option value="Shirts">Shirts</option>
+				<option value="Shoes">Shoes</option>
+			</select>
+			<small><span asp-validation-for="Category" class="text-danger"></span></small>
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="Tag" class="form-label"></label>
+			<select asp-for="Tag" class="form-control">
+				<option></option>
+				<option value="Featured">Featured</option>
+				<option value="New">New</option>
+				<option value="Popular">Popular</option>
+			</select>
+			<small><span asp-validation-for="Category" class="text-danger"></span></small>
+		</div>
+		
+		<div class="mb-3">
+			<label asp-for="ImageUrl" class="form-label"></label>
+			<input asp-for="ImageUrl" class="form-control" />
+		</div>
+
+		<div class="d-grid">
+			<button type="submit" class="btn-theme mb-3">ADD PRODUCT</button>
+		</div>
+
+
+	</form>
+</div>
