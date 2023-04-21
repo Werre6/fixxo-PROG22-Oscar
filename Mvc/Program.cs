@@ -12,12 +12,6 @@ builder.Services.AddScoped<JwtValidation>();
 builder.Services.AddScoped<AdminServices>();
 builder.Services.AddScoped<ShowcaseService>();
 
-#region Authentication
-
-#endregion
-
-
-
 
 var app = builder.Build();
 
